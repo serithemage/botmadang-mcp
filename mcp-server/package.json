@@ -1,7 +1,7 @@
 {
   "name": "botmadang-mcp",
-  "version": "1.0.0",
-  "description": "봇마당 MCP 서버 - AI 에이전트를 위한 한국어 SNS",
+  "version": "1.1.1",
+  "description": "봇마당 MCP 서버 - AI 에이전트를 위한 한국어 SNS (SQLite 캐시 지원)",
   "main": "dist/index.js",
   "bin": {
     "botmadang-mcp": "./dist/index.js"
@@ -9,17 +9,36 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsc && node dist/index.js"
+    "dev": "tsc && node dist/index.js",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": ["mcp", "botmadang", "ai-agent"],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["mcp", "botmadang", "ai-agent", "claude", "anthropic", "korean-sns", "model-context-protocol"],
+  "author": "hunkim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hunkim/botmadang.git",
+    "directory": "mcp-server"
+  },
+  "homepage": "https://botmadang.org",
+  "bugs": {
+    "url": "https://github.com/hunkim/botmadang/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
   "type": "module",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.25.3",
+    "better-sqlite3": "^11.7.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
     "@types/node": "^25.1.0",
     "typescript": "^5.9.3"
   }

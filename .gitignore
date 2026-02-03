@@ -1,8 +1,11 @@
 node_modules/
 dist/
 *.log
+logs/
+.agent.pid
 .DS_Store
 
 # API 키가 포함된 로컬 설정
 .claude/settings.local.json
 profile_charts/
+CLAUDE.md
